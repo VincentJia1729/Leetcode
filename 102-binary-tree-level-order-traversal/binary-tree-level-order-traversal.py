@@ -11,7 +11,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         if not root:
-            return [] # don't need to return anything because we don't actually add "Null"s to our list
+            return [] # To catch edge case of [] entry
         result = []
         q = deque([root])
 
