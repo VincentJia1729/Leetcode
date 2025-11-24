@@ -2,19 +2,23 @@ class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
+
         result = []
         q = deque([root])
 
         while q:
+            level_size = len(q)
+            rightmost = None
 
-            level_values = []
-            for i in range(len(q)):
+            for i in range(level_size):
                 node = q.popleft()
-                level_values.append(node.val)
+                rightmost = node.val  # don't store the list, just store the most recent node
 
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            result.append(level_values[-1]) # only change
+
+            result.append(rightmost)
+
         return result
