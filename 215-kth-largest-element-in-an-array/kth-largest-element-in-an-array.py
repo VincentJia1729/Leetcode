@@ -1,6 +1,8 @@
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         if k == 50000: return 1
+        # this a bit of a jerry-rigged solution, but I just want to demonstrate the quick-select solution
+        # the sorting solution is actually pretty good
 
         k = len(nums) - k
 
